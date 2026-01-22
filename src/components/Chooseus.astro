@@ -1,0 +1,110 @@
+---
+---
+
+<section id="container">
+
+<div class="offer-bg"></div>
+
+<div class="offer-overlay"></div>
+
+<div id="section1">
+<img src="/dude.png" alt="dude" />
+</div>
+
+<div id="section2">
+<h1>Why choose us?</h1>
+<p><span>Technological Consulting  </span> <span> Technical Development</span>Technical Maintenance</p>
+<p>At Tembeza, we offer you expert advice, bespoke technical development and ongoing maintenance to optimize your technology, 
+improve efficiency and ensure uninterrupted performance.</p>
+<a href="#" class="contact-us">Read More</a>
+</div>
+</section>
+
+<style>
+
+#container{
+        position: relative;
+        width: 100%;
+        height: 550px;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(12, 20, 36, 1);
+    }
+
+    #section1{
+        max-width: 550px;
+        padding-left: 150px;
+        padding-right: 50px;
+    }
+
+    h1{
+        font-size: 60px;
+    }
+
+    .span-text{
+        color: rgba(196, 6, 42, 1);
+    }
+
+    #section2{
+        padding-right: 150px;
+        padding-left: 50px;
+        max-width: 580px;
+        line-height: 32.4px;
+        font-size: 18px;
+    }
+
+    #section2 span{
+        border-right: solid 2px;
+        border-color: rgba(248, 88, 82, 1);
+        padding-right:5px;
+        margin-right:5px
+    }
+
+     #section2 p{
+        padding-left: 10px;
+     }
+
+     .contact-us {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        height: 40px;
+        border-radius: 50px;
+        border: 2px solid #C4062A;
+        background-color: #C4062A;
+        color: white;
+        font-weight: 600;
+        text-decoration: none;
+        transition: background-color 0.2s, color 0.2s;
+        margin-top:40px;
+
+    &:hover {
+      background-color: #c40675ff;
+      color: #white;
+    }
+  }
+
+  @media (max-width: 768px) {
+    #container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #section1{
+        display: none;
+    }
+
+    #section2{
+        padding: 0px;
+    }
+
+    .contact-us{
+        margin: 0 auto;
+    }
+
+}
+
+</style>
