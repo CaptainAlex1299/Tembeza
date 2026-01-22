@@ -3,10 +3,37 @@
 
 <section id="container">
     <div class="row">
-    <div class="block"></div>
-    <div class="block"></div>
-    <div class="block"></div>
-    <div class="block"></div>
+    <div class="block">
+    <div class="block-content">
+     <img src="/trophy.png" alt="Logo" />
+     <h1>100% Experience</h1>
+     <p>5 years of service</p>
+     </div>
+    </div>
+
+    <div class="block">
+    <div class="block-content">
+     <img src="/personIcon.png" alt="Logo" />
+     <h1>Digital Solutions</h1>
+     <p>Technological Development</p>
+     </div>
+    </div>
+
+    <div class="block">
+    <div class="block-content">
+     <img src="/lightning.png" alt="Logo" />
+     <h1>Maintenance</h1>
+     <p>Specialized Support</p>
+     </div>
+    </div>
+
+    <div class="block">
+    <div class="block-content">
+     <img src="/globe.png" alt="Logo" />
+     <h1>Confidentiality</h1>
+     <p>Secure Data</p>
+     </div>
+    </div>
     </div>
 </section>
 
@@ -28,9 +55,24 @@
     }
 
     .block{
-        background-color: red;
+        background-color: rgba(12, 20, 36, 1);
+        border-radius: 15px;
         width: 306px;
-        height: 200px;
+        height: 250px;
         z-index: 100;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+    }
+
+    .block-content h1{
+        color: rgba(255, 255, 255, 1);
+        font-size: 32px;
+    }
+
+    .block-content p{
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 16px;
     }
 </style>
