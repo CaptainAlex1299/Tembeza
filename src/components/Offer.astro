@@ -1,0 +1,87 @@
+---
+
+---
+
+<section id="container">
+
+<div class="offer-bg"></div>
+
+<div class="offer-overlay"></div>
+
+<div id="section1">
+<h1>What Can we offer <span class="span-text">you?</span><h1>
+</div>
+
+<div id="section2">
+<p>At Tembeza, we offer you expert advice, bespoke technical development and ongoing maintenance to optimize your technology, 
+improve efficiency and ensure uninterrupted performance.</p>
+</div>
+</section>
+
+<style>
+
+    #container{
+        position: relative;
+        width: 100%;
+        height: 500px;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+    #section1{
+        z-index:10;
+        font-family: Nunito;
+        font-style: Bold;
+        font-size: 40px;
+        max-width: 550px;
+        padding-left: 150px;
+        padding-right: 50px;
+    }
+
+    .span-text{
+        color: rgba(196, 6, 42, 1);
+    }
+
+    #section2{
+        z-index:10;
+        padding-right: 150px;
+        max-width: 540px;
+        line-height: 32.4px;
+        font-size: 18px;
+    }
+
+    .offer-bg{
+        position: absolute;
+        inset: 0;
+        background-image: url('/offer-bg.jpg');
+        background-size: cover;
+        z-index: 0.8; 
+        filter: brightness(0.45) saturate(1.2);
+    }
+
+    .offer-overlay{
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, rgba(6, 20, 46, 0.58) 0%,rgba(0, 10, 29, 0.95) 100%);
+        z-index: 3;
+        }
+
+    @media (max-width: 768px) {
+    #container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #section1{
+        padding: 0px;
+    }
+
+    #section2{
+        padding: 0px;
+    }
+}
+
+</style>
