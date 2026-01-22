@@ -8,14 +8,46 @@
   <div class="hero-overlay"></div>
 
   <div class="hero-content">
-    <h1>Tmbeza: Revolutionize your</h1>
-    <h1>Technology, exceed your goals.</h1>
+    <h1>Tmbeza: Revolutionize your
+    Technology, exceed your goals.</h1>
     <p>Innovation, Development and Support for an Efficient Future</p>
     <a href="#" class="cta-button">Discover More</a>
   </div>
 </section>
 
-<style>
+<style lang="scss">
+
+    h1{
+        font-size: 56px;
+        color: rgba(255, 255, 255, 1);
+    }
+
+    p{
+        font-size: 20px;
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    .cta-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.3rem 2rem;
+        height: 40px;
+        width: 200px;
+        margin: 0 auto;
+        border-radius: 50px;
+        border: 2px solid #C4062A;
+        background-color: #C4062A;
+        color: white;
+        font-weight: 600;
+        text-decoration: none;
+        transition: background-color 0.2s, color 0.2s;
+
+    &:hover {
+        background-color: #700101ff;
+        color: #ffffffff;
+    }
+  }
 
     .hero{
         position: relative;
@@ -27,30 +59,29 @@
         align-items: center;
     }
   
- .hero-bg {
-    position: absolute;
-    inset: 0;
-    background-image: url('/Hero-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    transform: scale(1.05);
-    z-index: 1;
-    filter: blur(14.6px); 
+    .hero-bg {
+        position: absolute;
+        inset: 0;
+        background-image: url('/Hero-bg.jpg');
+        background-size: cover;
+        background-position: center;
+        transform: scale(1.05);
+        z-index: 1;
+        filter: blur(14.6px); 
+        }
+
+    .hero-overlay{
+        position: absolute;
+        inset: 0;
+        background-color: rgba(12, 20, 36, 0.6);
+        z-index: 2;
     }
 
-  .hero-overlay{
-    position: absolute;
-    inset: 0;
-    background-color: rgba(12, 20, 36, 0.6);
-    z-index: 2;
-    
-  }
-
-  .hero-content {
-    position: relative;
-    z-index: 10;
-    text-align: center;
-    max-width: 900px;
-  }
+    .hero-content {
+        position: relative;
+        z-index: 10;
+        text-align: center;
+        max-width: 900px;
+    }
 
 </style>
