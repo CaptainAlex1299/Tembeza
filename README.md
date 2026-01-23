@@ -1,3 +1,21 @@
+# Tembeza – Tech Services Website
+
+This is the official website for **Tembeza**, a tech services business focused on modern web solutions, system optimization, and digital consulting.
+
+## Tech Stack
+- Astro
+- HTML
+- SCSS / CSS
+- TypeScript
+
+## Getting Started
+
+Install dependencies and run the development server:
+
+```bash
+npm install
+npm run dev
+
 # Astro Starter Kit: Basics
 
 ```sh
