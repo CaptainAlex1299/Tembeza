@@ -1,0 +1,57 @@
+---
+---
+
+<form id="contact-form">
+  <input type="text" name="name" placeholder="Name" required />
+  <input type="email" name="email" placeholder="Email" required />
+  <input type="text" name="subject" placeholder="Subject" required />
+  <textarea name="message" placeholder="Message" required></textarea>
+  <button type="submit">Send</button>
+</form>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  interface ApiResponse {
+    success?: boolean;
+    message?: string;
+    error?: string;
+  }
+
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+
+  if (!form) {
+    console.warn('Form element not found');
+    return;
+  }
+
+  // handle form submit via AJAX to prevent page reload
+  form.addEventListener('submit', async (e: SubmitEvent) => {
+    e.preventDefault(); // stops default form submission
+
+    // optional: show "sending" in console
+    console.log('Sending form...');
+
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch('/Tembeza/api/send-email.php', {
+        method: 'POST',
+        body: formData,
+      });
+
+      const result = (await response.json()) as ApiResponse;
+
+      // show alert for success/fail
+      if (result.success) {
+        alert(result.message || 'Message sent successfully!');
+        form.reset(); // clear the form
+      } else {
+        alert(result.error || 'Something went wrong.');
+      }
+    } catch (err: unknown) {
+      console.error('Form submission error:', err);
+      alert('Network error. Please try again.');
+    }
+  });
+});
+</script>
