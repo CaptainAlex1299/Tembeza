@@ -8,6 +8,8 @@ This the website for **Tembeza**, a tech services business focused on modern web
 - SCSS / CSS
 - TypeScript
 
+
+use hello@inkblot.co.za for form email
 ## Getting Started
 
 Install dependencies and run the development server:
