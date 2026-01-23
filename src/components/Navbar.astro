@@ -1,15 +1,10 @@
----
-
-
----
-
 <div id="container">
   <nav class="navbar">
     <div class="logo">
       <img src="./Group-3.png" alt="Logo" />
     </div>
 
-    <ul class="nav-links">
+    <ul class="nav-links" id="nav-list">
       <li><a href="#">Home</a></li>
       <li><a href="#">About</a></li>
       <li><a href="#">Services</a></li>
@@ -19,10 +14,17 @@
         <a href="#" class="contact-us">Contact Us</a>
       </li>
     </ul>
+
+    <!-- Mobile hamburger button (centered) -->
+    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </nav>
 </div>
 
-<style>
+<style lang="scss">
   #container {
     width: 100%;
     background-color: #0C1424;
@@ -35,10 +37,11 @@
     height: 100px;
     padding: 0 12px;
     color: white;
+    position: relative; /* for absolute positioning of hamburger */
   }
 
   .logo {
-	padding-left:10px;
+    padding-left: 10px;
   }
 
   .nav-links {
@@ -58,7 +61,7 @@
     color: #FFFFFFCC;
     text-decoration: none;
     transition: color 0.2s ease;
-    
+
     &:hover {
       color: #22d3ee;
     }
@@ -84,19 +87,73 @@
     }
   }
 
+  /* Hamburger button */
+  .hamburger {
+    display: none; /* hidden on desktop */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 36px;
+    height: 26px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%); /* perfect vertical centering */
+
+    span {
+      width: 100%;
+      height: 4px;
+      background: white;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    &[aria-expanded="true"] {
+      span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+      }
+      span:nth-child(2) {
+        opacity: 0;
+      }
+      span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+      }
+    }
+
+    @media (max-width: 768px) {
+      display: flex;
+    }
+  }
+
+  /* Mobile menu */
   @media (max-width: 768px) {
     .navbar {
-      flex-direction: column;
+      flex-direction: row;
+      justify-content: space-between;
       height: auto;
       padding: 16px 12px;
-      gap: 16px;
     }
 
     .nav-links {
+      display: none;
       flex-direction: column;
       gap: 12px;
       width: 100%;
       text-align: center;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #0C1424;
+      padding: 1rem 0;
+      z-index: 99;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+
+      &.toggled {
+        display: flex;
+      }
     }
 
     .contact-li {
@@ -108,3 +165,23 @@
     }
   }
 </style>
+
+<script lang="javascript">
+  const hamburger = document.querySelector('.hamburger');
+  const navList = document.getElementById('nav-list');
+
+  if (hamburger && navList) {
+    hamburger.addEventListener('click', () => {
+      const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', (!isExpanded).toString());
+      navList.classList.toggle('toggled');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !navList.contains(e.target)) {
+        hamburger.setAttribute('aria-expanded', 'false');
+        navList.classList.remove('toggled');
+      }
+    });
+  }
+</script>

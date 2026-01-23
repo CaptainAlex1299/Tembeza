@@ -70,6 +70,10 @@
         text-align: start;
         padding: 50px;
         line-height: 24px;
+        transition: transform 0.3s ease;
+        &:hover {
+      transform: scale(1.1);
+    }
     }
 
     .middle-block{
@@ -88,4 +92,18 @@
         padding-left: 28px;
         background-position: 0 3px;
     }
+
+    @media (max-width: 768px) {
+    .row{
+      flex-direction: column;
+      height: auto;
+      gap: 0px;
+      padding: 0px;
+      padding-top: 10px;
+    }
+
+    .block{
+      padding: 0px;
+    }
+}
 </style>

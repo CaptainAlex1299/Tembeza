@@ -1,0 +1,100 @@
+---
+---
+
+    <footer id="container">
+        <div style="">
+        <img src="./Tembeza-logo.png" alt="Logo" />
+        </div>
+
+        <div>
+        <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Why Us</a></li>
+      <li><a href="#">Why FAQ's</a></li>
+      <li class="contact-li">
+        <a href="#" class="contact-us">Contact Us</a>
+      </li>
+    </ul>
+
+        <div class="email">
+            <img src="./Background.png" alt="Logo" />
+            <p>alexanderwayneforrest@gmail.com</p>
+        </div>
+
+        <div class="bottom-container">
+            <p>© Copyright Tembeza International All Rights Reserved</p>
+
+            <ul class="nav-links">
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Cookie Policy</a></li>
+            </ul>
+        </div>
+    </div>
+    </footer>
+
+<style>
+    #container{
+        width: 100%;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        padding-top: 50px;
+        color: white;
+        padding-bottom: 50px;
+    }
+
+    .bottom-container {
+        width: 100%;
+        height: 71px;
+        min-width: 1400px; 
+        background-color: #1F2635;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+        padding:10px;
+    }
+
+    .email{
+        display: flex; 
+        flex-direction: row; 
+        align-items: center;
+        justify-content: center;
+        gap: 10px; margin-top: 20px;
+    }
+
+    .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 24px;
+        margin: 0;
+        padding: 0;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav-links li a {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        color: #FFFFFFCC;
+        text-decoration: none;
+        transition: color 0.2s ease;
+    &:hover {
+      color: #22d3ee;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .bottom-container{
+        flex-direction: column;
+        min-width: 0px;
+        padding: 0px;
+        padding-bottom: 15px;
+    }
+  }
+</style>
