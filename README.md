@@ -1,6 +1,6 @@
 # Tembeza – Tech Services Website
 
-This is the official website for **Tembeza**, a tech services business focused on modern web solutions, system optimization, and digital consulting.
+This the website for **Tembeza**, a tech services business focused on modern web solutions, system optimization, and digital consulting.
 
 ## Tech Stack
 - Astro
