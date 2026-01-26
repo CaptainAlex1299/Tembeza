@@ -183,9 +183,6 @@ document.addEventListener('DOMContentLoaded', () => {
   form.addEventListener('submit', async (e: SubmitEvent) => {
     e.preventDefault(); // stops default form submission
 
-    // optional: show "sending" in console
-    console.log('Sending form...');
-
     const formData = new FormData(form);
 
     try {
