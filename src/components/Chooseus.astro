@@ -12,8 +12,8 @@
 </div>
 
 <div id="section2">
-<h1>Why choose us?</h1>
-<p><span>Technological Consulting  </span> <span> Technical Development</span>Technical Maintenance</p>
+<h1>Why choose <span style="color: #C4062A;">us?</span></h1>
+<p><span class="spanborder">Technological Consulting  </span> <span class="spanborder"> Technical Development</span>Technical Maintenance</p>
 <p>We offer expert advice to optimize your systems, tailored technical and digital development, and reliable maintenance to ensure operational continuity. 
 Trust us to drive innovation and keep your technologies in perfect condition.</p>
 <a href="#" class="contact-us">Read More</a>
@@ -55,7 +55,7 @@ Trust us to drive innovation and keep your technologies in perfect condition.</p
         font-size: 18px;
     }
 
-    #section2 span{
+    #section2 .spanborder{
         border-right: solid 2px;
         border-color: rgba(248, 88, 82, 1);
         padding-right:5px;
@@ -108,6 +108,10 @@ Trust us to drive innovation and keep your technologies in perfect condition.</p
 
 }
 
-    
+ @media (max-width: 768px) {
+    h1{
+        font-size: 50px;
+    }
+ }   
 
 </style>
