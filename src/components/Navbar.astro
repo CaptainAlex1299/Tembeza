@@ -166,22 +166,35 @@
   }
 </style>
 
-<script lang="javascript">
-  const hamburger = document.querySelector('.hamburger');
-  const navList = document.getElementById('nav-list');
+<script>
+  const hamburger = document.querySelector<HTMLButtonElement>('.hamburger');
+const navList = document.getElementById('nav-list') as HTMLElement | null;
 
-  if (hamburger && navList) {
-    hamburger.addEventListener('click', () => {
-      const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
-      hamburger.setAttribute('aria-expanded', (!isExpanded).toString());
-      navList.classList.toggle('toggled');
-    });
+if (!hamburger || !navList) {
+  console.warn('Hamburger or nav list not found');
+} else {
+  hamburger.addEventListener('click', () => {
+    const isExpanded =
+      hamburger.getAttribute('aria-expanded') === 'true';
 
-    document.addEventListener('click', (e) => {
-      if (!hamburger.contains(e.target) && !navList.contains(e.target)) {
-        hamburger.setAttribute('aria-expanded', 'false');
-        navList.classList.remove('toggled');
-      }
-    });
-  }
+    hamburger.setAttribute(
+      'aria-expanded',
+      String(!isExpanded)
+    );
+
+    navList.classList.toggle('toggled');
+  });
+
+  document.addEventListener('click', (e: MouseEvent) => {
+    const target = e.target as Node;
+
+    if (
+      !hamburger.contains(target) &&
+      !navList.contains(target)
+    ) {
+      hamburger.setAttribute('aria-expanded', 'false');
+      navList.classList.remove('toggled');
+    }
+  });
+}
 </script>
