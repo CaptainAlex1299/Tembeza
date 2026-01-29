@@ -26,7 +26,7 @@ if (empty($email)) {
     exit;
 }
 
-// === Their exact requirement: domain check ===
+// requirement
 $inkblot_domain = '@inkblot.co.za';
 if (stripos($email, $inkblot_domain) !== false) {
     // SUCCESS (200)
@@ -38,7 +38,6 @@ if (stripos($email, $inkblot_domain) !== false) {
     $mail = new PHPMailer(true);
 
     try {
-        // Your SMTP settings (keep as-is)
         $mail->isSMTP();
         $mail->Host       = 'smtp.gmail.com';
         $mail->SMTPAuth   = true;

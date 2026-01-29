@@ -7,7 +7,7 @@
         </div>
 
         <div>
-        <ul class="nav-links">
+        <ul class="nav-links top-nav">
       <li><a href="#">Home</a></li>
       <li><a href="#">About</a></li>
       <li><a href="#">Services</a></li>
@@ -47,9 +47,9 @@
     }
 
     .bottom-container {
-        width: 100%;
+        width: 95vw;
+        max-width: 1400px;
         height: 71px;
-        min-width: 1400px; 
         background-color: #1F2635;
         display: flex;
         justify-content: space-between;
@@ -95,6 +95,14 @@
         min-width: 0px;
         padding: 0px;
         padding-bottom: 15px;
+    }
+
+    .top-nav{
+        display: grid;
+        grid-template-columns: repeat(3, auto); /* 3 items per row */
+        gap: 16px 32px;
+        justify-content: center;
+        margin-top: 30px;
     }
   }
 </style>
