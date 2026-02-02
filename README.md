@@ -12,6 +12,10 @@ This the website for **Tembeza**, a tech services business focused on modern web
 use hello@inkblot.co.za for form email
 ## Getting Started
 
+### Images not loading locally when using `base`
+
+This project is deployed to a subdirectory: in astro.config file do : base: '/Tembeza/'
+
 Install dependencies and run the development server:
 
 ```bash
