@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-// Get email from form (supports both JSON and form-data)
+// Get email from form
 $input = json_decode(file_get_contents('php://input'), true);
 $email = trim($input['email'] ?? $_POST['email'] ?? '');
 
@@ -29,7 +29,6 @@ if (empty($email)) {
 // requirement
 $inkblot_domain = '@inkblot.co.za';
 if (stripos($email, $inkblot_domain) !== false) {
-    // SUCCESS (200)
 
     $name    = htmlspecialchars($input['name'] ?? $_POST['name'] ?? 'N/A', ENT_QUOTES, 'UTF-8');
     $subject = htmlspecialchars($input['subject'] ?? $_POST['subject'] ?? 'No subject', ENT_QUOTES, 'UTF-8');
@@ -41,8 +40,8 @@ if (stripos($email, $inkblot_domain) !== false) {
         $mail->isSMTP();
         $mail->Host       = 'smtp.gmail.com';
         $mail->SMTPAuth   = true;
-        $mail->Username   = 'awforrest121237@gmail.com';
-        $mail->Password   = 'gmmd caxm dqkq vnix'; // app password
+        $mail->Username   = 'youremail@gmail.com'; //email goes here
+        $mail->Password   = 'password'; // app password
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port       = 587;
 
@@ -66,7 +65,6 @@ if (stripos($email, $inkblot_domain) !== false) {
             'message' => 'Thank you! Your message has been sent.'
         ]);
     } catch (Exception $e) {
-        // Even if sending fails, return 200 since domain is correct
         http_response_code(200);
         echo json_encode([
             'success' => true,
@@ -74,7 +72,6 @@ if (stripos($email, $inkblot_domain) !== false) {
         ]);
     }
 } else {
-    // === FAILURE (500) ===
     http_response_code(500);
     echo json_encode([
         'error' => 'Invalid email domain'
