@@ -185,7 +185,8 @@
 </style>
 
 <script>
-document.addEventListener('DOMContentLoaded', () => {
+  
+  document.addEventListener('DOMContentLoaded', () => {
   interface ApiResponse {
     success?: boolean;
     message?: string;
@@ -199,9 +200,8 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
-  // handle form submit via AJAX to prevent page reload
   form.addEventListener('submit', async (e: SubmitEvent) => {
-    e.preventDefault(); // stops default form submission
+    e.preventDefault();
 
     const formData = new FormData(form);
 
@@ -213,10 +213,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const result = (await response.json()) as ApiResponse;
 
-      // show alert for success/fail
       if (result.success) {
         alert(result.message || 'Message sent successfully!');
-        form.reset(); // clear the form
+        form.reset();
       } else {
         alert(result.error || 'Something went wrong.');
       }
